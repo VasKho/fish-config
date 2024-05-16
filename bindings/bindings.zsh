@@ -92,6 +92,7 @@ bindkey "^R" fzf-history-widget
 # Text editing
 bindkey "^@" visual-mode
 bindkey "^D" delete-char-or-list
+bindkey "^[[3~" delete-char-or-list
 bindkey "^?" __kill-char-or-region
 bindkey "^[^?" backward-kill-word
 bindkey "^H" backward-kill-word
@@ -102,7 +103,6 @@ bindkey "^[t" transpose-words
 
 bindkey "^_" undo
 bindkey "^[/" redo
-bindkey "^[\'" quote-region
 
 bindkey "^I" fzf-completion
 bindkey "^T" fzf-file-widget
