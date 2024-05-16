@@ -1,1 +1,108 @@
 * zsh-config
+ZSH configuration based on [[https://github.com/ohmyzsh/ohmyzsh][oh-my-zsh]] framefork.
+
+Currently only default plugins are used, so this setup isn't bloated.
+
+** Installation
+
+*** Requirements
+To get fully working setup one needs to install the following packages
+- ~fzf~
+- ~neovim~
+- ~git~
+
+Run ~make check~ to find if they all are present in your system.
+
+*** Quick start
+
+There are two possible options to install this dotfiles:
+- Via ~make~ (notice that you'll need to install ~make~ package as well in order to do so)
+
+  #+begin_src sh
+    make install
+    # to uninstall run the following command
+    # make uninstall
+  #+end_src
+  
+- Manually
+  Clone this repository to ~~/.config/zsh~
+  
+  #+begin_src sh
+    git clone https://github.com/VasKho/zsh-config ~/.config/zsh
+  #+end_src
+  
+** Aliases
+
+|-------+---------------------------------------------|
+| Alias | Description                                 |
+|-------+---------------------------------------------|
+| ~em~  | Open emacsclient in terminal                |
+|-------+---------------------------------------------|
+| ~dbx~ | Distrobox with ~TERM=xterm-256color~ set up |
+|-------+---------------------------------------------|
+| ~ssh~ | ~ssh~ with ~TERM=xterm-256color~ set up     |
+|-------+---------------------------------------------|
+
+** Plugins
+
++ git
++ zsh-navigation-tools
++ zsh-autosuggestions
++ fzf
++ safe-paste
+
+** Keybindings
+
+These shortcuts are tightly inspired by emacs and thus are similar (~M~ stands for ~Alt~ and ~C~ is for ~Control~)
+
+|---------------------------------+--------------------------------------------|
+| Key                             | Description                                |
+|---------------------------------+--------------------------------------------|
+| ~M-<num>~                       | Digit argument for command                 |
+|---------------------------------+--------------------------------------------|
+| ~C-f~/~<right-arrow>~           | Forward char                               |
+|---------------------------------+--------------------------------------------|
+| ~C-b~/~<left-arrow>~            | Backward char                              |
+|---------------------------------+--------------------------------------------|
+| ~M-f~/~C-<right-arrow>~         | Forward word                               |
+|---------------------------------+--------------------------------------------|
+| ~M-b~/~C-<left-arrow>~          | Backward word                              |
+|---------------------------------+--------------------------------------------|
+| ~C-a~                           | Move cursor to the beginning of line       |
+|---------------------------------+--------------------------------------------|
+| ~C-e~                           | Move cursor to the end of line             |
+|---------------------------------+--------------------------------------------|
+| ~C-p~/~<up-arrow>~              | Backward search in history                 |
+|---------------------------------+--------------------------------------------|
+| ~C-n~/~<down-arrow>~            | Forward search in history                  |
+|---------------------------------+--------------------------------------------|
+| ~C-r~                           | Fuzzy history search via ~fzf~ plugin      |
+|---------------------------------+--------------------------------------------|
+| ~C-SPC~                         | Set/unset mark                             |
+|---------------------------------+--------------------------------------------|
+| ~C-d~/~<del>~                   | Delete char after cursor                   |
+|---------------------------------+--------------------------------------------|
+| ~<backspace>~                   | Delete char before cursor                  |
+|---------------------------------+--------------------------------------------|
+| ~M-<backspace>~/~C-<backspace>~ | Delete word before cursor                  |
+|---------------------------------+--------------------------------------------|
+| ~M-d~                           | Delete word after cursor                   |
+|---------------------------------+--------------------------------------------|
+| ~C-k~                           | Delete line from cursor to the end of line |
+|---------------------------------+--------------------------------------------|
+| ~M-t~                           | Transpose two words                        |
+|---------------------------------+--------------------------------------------|
+| ~C-/~/~M-/~                     | Undo/Redo                                  |
+|---------------------------------+--------------------------------------------|
+| ~TAB~                           | Enable completion                          |
+|---------------------------------+--------------------------------------------|
+| ~C-t~                           | Fuzzy file search with ~fzf~               |
+|---------------------------------+--------------------------------------------|
+| ~C-x C-e~                       | Open editor for command                    |
+|---------------------------------+--------------------------------------------|
+| ~C-g~                           | Send break                                 |
+|---------------------------------+--------------------------------------------|
+| ~M-w~                           | Copy (to system clipboard)                 |
+|---------------------------------+--------------------------------------------|
+| ~C-y~                           | Paste (from system clipboard)              |
+|---------------------------------+--------------------------------------------|
