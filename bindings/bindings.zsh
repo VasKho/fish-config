@@ -11,6 +11,8 @@ function __copy() {
         end=$((MARK + 1))
     fi
     echo ${BUFFER} | cut -c "${start}-${end}" | clipcopy
+    CURSOR="${MARK}"
+    REGION_ACTIVE=0
 }
 
 function __paste() {
@@ -105,6 +107,7 @@ bindkey "^_" undo
 bindkey "^[/" redo
 
 bindkey "^I" fzf-completion
+bindkey "^[[Z" reverse-menu-complete
 bindkey "^T" fzf-file-widget
 
 # Other
