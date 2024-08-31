@@ -1,5 +1,5 @@
-* zsh-config
-ZSH configuration based on [[https://github.com/ohmyzsh/ohmyzsh][oh-my-zsh]] framefork.
+* fish-config
+Fish shell configuration with some useful plugins and keybindings + custom theme.
 
 Currently only default plugins are used, so this setup isn't bloated.
 
@@ -10,6 +10,8 @@ To get fully working setup one needs to install the following packages
 - ~fzf~
 - ~neovim~
 - ~git~
+- ~fd~
+- ~bat~
 
 Run ~make check~ to find if they all are present in your system.
 
@@ -23,14 +25,14 @@ There are two possible options to install this dotfiles:
     # to uninstall run the following command
     # make uninstall
   #+end_src
-  
+
 - Manually
-  Clone this repository to ~$HOME/.config/zsh~
-  
+  Clone this repository to ~$HOME/.config/fish~
+
   #+begin_src sh
-    git clone https://github.com/VasKho/zsh-config ~/.config/zsh
+    git clone https://github.com/VasKho/fish-config ~/.config/fish
   #+end_src
-  
+
 ** Aliases
 
 |-------+---------------------------------------------|
@@ -44,12 +46,7 @@ There are two possible options to install this dotfiles:
 |-------+---------------------------------------------|
 
 ** Plugins
-
-+ git
-+ zsh-navigation-tools
-+ zsh-autosuggestions
 + fzf
-+ safe-paste
 
 ** Keybindings
 
@@ -57,8 +54,6 @@ These shortcuts are tightly inspired by emacs and thus are similar (~M~ stands f
 
 |-----------------------------------+--------------------------------------------|
 | Key                               | Description                                |
-|-----------------------------------+--------------------------------------------|
-| ~M-<num>~                         | Digit argument for command                 |
 |-----------------------------------+--------------------------------------------|
 | ~C-f~ / ~<right-arrow>~           | Forward char                               |
 |-----------------------------------+--------------------------------------------|
@@ -76,9 +71,9 @@ These shortcuts are tightly inspired by emacs and thus are similar (~M~ stands f
 |-----------------------------------+--------------------------------------------|
 | ~C-n~ / ~<down-arrow>~            | Forward search in history                  |
 |-----------------------------------+--------------------------------------------|
-| ~C-r~                             | Fuzzy history search via ~fzf~ plugin      |
+| ~C-SPC~                           | Set mark                                   |
 |-----------------------------------+--------------------------------------------|
-| ~C-SPC~                           | Set/unset mark                             |
+| ~C-x C-x~                         | Swap current position and selection start  |
 |-----------------------------------+--------------------------------------------|
 | ~C-d~ / ~<del>~                   | Delete char after cursor                   |
 |-----------------------------------+--------------------------------------------|
@@ -90,13 +85,13 @@ These shortcuts are tightly inspired by emacs and thus are similar (~M~ stands f
 |-----------------------------------+--------------------------------------------|
 | ~C-k~                             | Delete line from cursor to the end of line |
 |-----------------------------------+--------------------------------------------|
-| ~M-t~                             | Transpose two words                        |
+| ~C-x C-u~                         | Upcase word after cursor                   |
+|-----------------------------------+--------------------------------------------|
+| ~C-x C-l~                         | Downcase word after cursor                 |
 |-----------------------------------+--------------------------------------------|
 | ~C-/~ / ~M-/~                     | Undo/Redo                                  |
 |-----------------------------------+--------------------------------------------|
 | ~TAB~                             | Enable completion                          |
-|-----------------------------------+--------------------------------------------|
-| ~C-t~                             | Fuzzy file search with ~fzf~               |
 |-----------------------------------+--------------------------------------------|
 | ~C-x C-e~                         | Open editor for command                    |
 |-----------------------------------+--------------------------------------------|
@@ -105,4 +100,14 @@ These shortcuts are tightly inspired by emacs and thus are similar (~M~ stands f
 | ~M-w~                             | Copy (to system clipboard)                 |
 |-----------------------------------+--------------------------------------------|
 | ~C-y~                             | Paste (from system clipboard)              |
+|-----------------------------------+--------------------------------------------|
+| ~C-r~                             | Fuzzy history search via ~fzf~ plugin      |
+|-----------------------------------+--------------------------------------------|
+| ~C-M-f~                           | Search directory with ~fzf~                |
+|-----------------------------------+--------------------------------------------|
+| ~C-M-l~                           | Search git log with ~fzf~                  |
+|-----------------------------------+--------------------------------------------|
+| ~C-M-s~                           | Search git status with ~fzf~               |
+|-----------------------------------+--------------------------------------------|
+| ~C-v~                             | Search shell variables with ~fzf~          |
 |-----------------------------------+--------------------------------------------|
